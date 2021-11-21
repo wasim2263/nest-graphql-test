@@ -1,22 +1,20 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { CreateTest } from './dto/create-test.input';
 import { UpdateTestInput } from './dto/update-test.input';
 import { Test } from './entities/test.entity';
 
 @Injectable()
 export class TestService {
+  constructor(@InjectRepository(Test) private testRepository: Repository<Test>){}
   create(createTest: CreateTest) {
-    return 'This action adds a new test';
+    const newTest = this.testRepository.create(createTest);
+    return this.testRepository.save(newTest);
   }
 
   async findAll(): Promise<Test[]> {
-    const a = new Test();
-    a.amount = 12;
-    a.id=1;
-    const a1 = new Test();
-    a1.amount = 123;
-    a1.id=2;
-    return [a, a1];
+    return this.testRepository.find();
   }
 
   // findOne(id: number) {
