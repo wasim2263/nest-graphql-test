@@ -7,7 +7,9 @@ import { Test } from './entities/test.entity';
 
 @Injectable()
 export class TestService {
-  constructor(@InjectRepository(Test) private testRepository: Repository<Test>){}
+  constructor(
+    @InjectRepository(Test) private testRepository: Repository<Test>
+    ){}
   create(createTest: CreateTest) {
     const newTest = this.testRepository.create(createTest);
     return this.testRepository.save(newTest);
