@@ -16,6 +16,5 @@ type Mutation {
 }
 
 input CreateTest {
-  id: Int!
   amount: Float!
 }
