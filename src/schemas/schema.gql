@@ -1,0 +1,21 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Test {
+  id: Int!
+  amount: Int!
+}
+
+type Query {
+  tests: [Test!]!
+}
+
+type Mutation {
+  createTest(createTest: CreateTest!): Test!
+}
+
+input CreateTest {
+  id: Int!
+  amount: Float!
+}

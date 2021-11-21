@@ -13,7 +13,7 @@ export class TestResolver {
   }
 
   @Query(() => [Test])
-  tests() : Promise<Test[]> {
+  tests(){
     return this.testService.findAll();
   }
 

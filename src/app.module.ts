@@ -9,7 +9,7 @@ import { TestModule } from "./test/test.module";
   imports: [
     GraphQLModule.forRoot({
       debug: true,
-      autoSchemaFile: join(process.cwd(), "src/schemdfasdfas.gql"),
+      autoSchemaFile: join(process.cwd(), "src/schemas/schema.gql"),
     }),
     TestModule,
   ]

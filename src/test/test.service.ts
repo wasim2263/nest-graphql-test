@@ -13,7 +13,10 @@ export class TestService {
     const a = new Test();
     a.amount = 12;
     a.id=1;
-    return [a];
+    const a1 = new Test();
+    a1.amount = 123;
+    a1.id=2;
+    return [a, a1];
   }
 
   // findOne(id: number) {

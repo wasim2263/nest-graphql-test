@@ -4,6 +4,6 @@ import { ObjectType, Field, Int } from '@nestjs/graphql';
 export class Test {
   @Field(() => Int)
   id:number;
-  @Field()
+  @Field(()=> Int)
   amount: number;
 }
