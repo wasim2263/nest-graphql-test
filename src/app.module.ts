@@ -17,7 +17,7 @@ import { TestModule } from "./test/test.module";
       type: 'sqlite',
       database:':memory:',
       entities:[Test],
-      synchronize: false,
+      synchronize: true,
     }),
     TestModule,
   ]
