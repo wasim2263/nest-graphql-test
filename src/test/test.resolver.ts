@@ -6,7 +6,16 @@ import { CreateTest } from './dto/create-test.input';
 @Resolver(() => Test)
 export class TestResolver {
   constructor(private readonly testService: TestService) {}
-
+/**
+//  mutation{
+//   createTest(createTest:{
+//     amount:2
+//   }){
+//     amount
+//     id
+//   }
+// }
+*/
   @Mutation(() => Test)
   createTest(@Args('createTest') createTest: CreateTest) {
     return this.testService.create(createTest);
